@@ -1,8 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap");
-.ref {
-  position: absolute;
-  opacity: 0.3;
-  display: none;
+.info, .email label, .email .error-icon {
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 
 * {
@@ -193,7 +192,30 @@ p {
   }
 }
 
+.email label {
+  position: absolute;
+  bottom: -1.6rem;
+  left: 2rem;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #f96262;
+  opacity: 0;
+}
+
+@media screen and (max-width: 860px) {
+  .email label {
+    left: 7.5rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .email label {
+    left: 2rem;
+  }
+}
+
 .email input {
+  position: relative;
   width: 100%;
   font-family: inherit;
   outline: none;
@@ -232,6 +254,50 @@ p {
   border: 1px solid #be7474;
 }
 
+.email input.error {
+  -webkit-animation: 3s fadeInOut ease-in-out;
+          animation: 3s fadeInOut ease-in-out;
+}
+
+@-webkit-keyframes fadeInOut {
+  0% {
+    border: 1px solid #ce9797;
+  }
+  10% {
+    border: 2px solid #f96262;
+  }
+  90% {
+    border: 2px solid #f96262;
+  }
+  100% {
+    border: 1px solid #ce9797;
+  }
+}
+
+@keyframes fadeInOut {
+  0% {
+    border: 1px solid #ce9797;
+  }
+  10% {
+    border: 2px solid #f96262;
+  }
+  90% {
+    border: 2px solid #f96262;
+  }
+  100% {
+    border: 1px solid #ce9797;
+  }
+}
+
+.email .error-icon {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: -2.5rem;
+  opacity: 0;
+}
+
 .email button {
   cursor: pointer;
   outline: none;
@@ -244,8 +310,10 @@ p {
   border-radius: 3rem;
   -webkit-box-shadow: 0 1rem 1rem rgba(206, 151, 151, 0.3);
           box-shadow: 0 1rem 1rem rgba(206, 151, 151, 0.3);
-  -webkit-transition: 0.2s linear;
-  transition: 0.2s linear;
+  -webkit-transition: -webkit-box-shadow 0.2s linear;
+  transition: -webkit-box-shadow 0.2s linear;
+  transition: box-shadow 0.2s linear;
+  transition: box-shadow 0.2s linear, -webkit-box-shadow 0.2s linear;
 }
 
 @media screen and (max-width: 860px) {

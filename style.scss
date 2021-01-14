@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap");
+
+.ref {
+  position: absolute;
+  opacity: 0.3;
+  display: none;
+}
+
+$Desaturated-Red: hsl(0, 36%, 70%);
+$Soft-Red: hsl(0, 93%, 68%);
+$Dark-Grayish-Red: hsl(0, 6%, 24%);
+
+$Gradient: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+$Gradient-bg: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+  color: $Dark-Grayish-Red;
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: space-between;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 4rem 10.4rem;
+  background: no-repeat url("../images/bg-pattern-desktop.svg"),
+    no-repeat $Gradient-bg;
+  background-size: cover;
+}
+
+.logo {
+  margin-bottom: 8.5rem;
+}
+
+h1 {
+  text-transform: uppercase;
+  font-size: 4rem;
+  letter-spacing: 1rem;
+  margin-bottom: 1.7rem;
+  line-height: 1.03;
+
+  span {
+    font-weight: 300;
+    color: $Desaturated-Red;
+  }
+}
+
+p {
+  line-height: 1.7;
+  // width: 90%;
+  color: $Desaturated-Red;
+  margin-bottom: 2.5rem;
+}
+
+.email {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  // width: 90%;
+  width: 100%;
+
+  input {
+    width: 100%;
+    font-family: inherit;
+    outline: none;
+    background: none;
+    border: 1px solid $Desaturated-Red;
+    border-radius: 3rem;
+    font-size: 1.1rem;
+    letter-spacing: 0.05rem;
+    padding: 1.2rem 2rem;
+
+    &::placeholder {
+      color: rgba($Desaturated-Red, 0.5);
+    }
+
+    &:hover,
+    &:focus {
+      border: 1px solid darken($Desaturated-Red, 10%);
+    }
+  }
+
+  button {
+    cursor: pointer;
+    outline: none;
+    border: none;
+    position: absolute;
+    width: 6.5rem;
+    height: 100%;
+    right: 0;
+    background: $Gradient;
+    border-radius: 3rem;
+    box-shadow: 0 1rem 1rem rgba($Desaturated-Red, 0.3);
+    transition: 0.2s linear;
+
+    &:hover,
+    &:active {
+      background: linear-gradient(135deg, hsl(0, 80%, 96%), hsl(0, 74%, 84%));
+      box-shadow: 0 1rem 1.5rem rgba($Desaturated-Red, 0.6);
+    }
+  }
+}
+
+.hero-img {
+  // max-width: 610px;
+  max-width: 42vw;
+  width: 100%;
+  background: no-repeat url("../images/hero-desktop.jpg");
+  background-size: cover;
+}
+
+.hero-mobile {
+  background: no-repeat url("../images/hero-mobile.jpg");
+  background-size: cover;
+  width: 100%;
+  height: 10rem;
+  display: none;
+}
